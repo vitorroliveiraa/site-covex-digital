@@ -1,19 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, Shield, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Globe, MessageCircle, Sparkles, Target, Zap } from "lucide-react";
 import { GlassCard } from "./ui/GlassCard";
 import { GradientOrb } from "./ui/GradientOrb";
 import { buildWhatsappUrl } from "@/lib/site";
 
 const heroBadges = [
     {
-        icon: Zap,
-        label: "Meta Ads & Google Ads",
+        icon: Target,
+        label: "Aquisição de Clientes",
     },
     {
-        icon: Shield,
-        label: "Sem taxa nas primeiras parcerias",
+        icon: Globe,
+        label: "Presença Digital",
+    },
+    {
+        icon: Zap,
+        label: "Eficiência Operacional",
     },
 ];
 
@@ -63,83 +67,80 @@ export function Hero() {
                     animate="show"
                     className="mx-auto flex max-w-4xl flex-col items-center text-center"
                 >
-                    {/* <motion.div variants={itemVariants}>
+                    <motion.div variants={itemVariants}>
                         <div className="liquid-glass-purple inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-white/85">
                             <Sparkles className="h-3.5 w-3.5 text-secondary-light" aria-hidden="true" />
-                            Gestão de Tráfego Pago de Alto Impacto
+                            Parceiro Estratégico Digital
                         </div>
-                    </motion.div> */}
+                    </motion.div>
 
                     <motion.h1
                         variants={itemVariants}
                         className="mt-7 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
                     >
-                        Tráfego Pago que <span className="text-gradient-purple">Gera Resultado</span>.
+                        Estrutura Digital que{" "}
+                        <span className="text-gradient-purple">Cresce</span>
                         <br className="hidden sm:block" />
-                        Não Apenas <span className="italic text-white/70">Cliques</span>.
+                        com o seu Negócio.
                     </motion.h1>
 
                     <motion.p
                         variants={itemVariants}
                         className="mt-7 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
                     >
-                        A Covex Digital nasceu com um único foco:{" "}
-                        <strong className="font-semibold text-white">Meta Ads com performance real.</strong> Estou
-                        abrindo vagas para as primeiras parcerias —{" "}
-                        <span className="text-white">sem taxa de serviço, só resultado</span>.
+                        A Covex Digital é parceira estratégica de clínicas, escritórios e pequenas empresas que querem{" "}
+                        <strong className="font-semibold text-white">atrair mais clientes</strong>,{" "}
+                        <strong className="font-semibold text-white">fortalecer a presença digital</strong> e operar
+                        com mais eficiência — sem depender de sorte.
                     </motion.p>
 
                     <motion.div variants={itemVariants} className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
                         <a
                             href={buildWhatsappUrl(
-                                "Olá! Vim pelo site da Covex Digital e quero garantir uma das vagas das primeiras parcerias.",
+                                "Olá! Vim pelo site da Covex Digital e quero entender como vocês podem ajudar meu negócio a crescer.",
                             )}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary"
                         >
                             <MessageCircle className="h-5 w-5" aria-hidden="true" />
-                            Quero uma vaga — falar agora
+                            Quero um diagnóstico gratuito
                         </a>
-                        <a href="#processo" className="btn-secondary">
-                            Ver como funciona
+                        <a href="#servicos" className="btn-secondary">
+                            Conheça as soluções
                             <ArrowRight className="h-4 w-4" aria-hidden="true" />
                         </a>
                     </motion.div>
                 </motion.div>
 
-                {/* <motion.ul
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2"
-          aria-label="Destaques da Covex Digital"
-        >
-          {heroBadges.map((badge, idx) => {
-            const Icon = badge.icon;
-            return (
-              <motion.li
-                key={badge.label}
-                variants={itemVariants}
-                className="animate-float"
-                style={{ animationDelay: `${idx * 1.2}s` }}
-              >
-                <GlassCard
-                  variant="strong"
-                  hoverable
-                  className="flex items-center gap-4 p-5"
+                <motion.ul
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3"
+                    aria-label="Pilares da Covex Digital"
                 >
-                  <span className="liquid-glass-purple flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
-                    <Icon className="h-5 w-5 text-secondary-light" aria-hidden="true" />
-                  </span>
-                  <p className="text-left font-display text-base font-semibold leading-tight text-white sm:text-lg">
-                    {badge.label}
-                  </p>
-                </GlassCard>
-              </motion.li>
-            );
-          })}
-        </motion.ul> */}
+                    {heroBadges.map((badge, idx) => {
+                        const Icon = badge.icon;
+                        return (
+                            <motion.li
+                                key={badge.label}
+                                variants={itemVariants}
+                                className="animate-float"
+                                style={{ animationDelay: `${idx * 1.2}s` }}
+                            >
+                                <GlassCard variant="strong" hoverable className="flex items-center gap-4 p-5">
+                                    <span className="liquid-glass-purple flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
+                                        <Icon className="h-5 w-5 text-secondary-light" aria-hidden="true" />
+                                    </span>
+                                    <p className="text-left font-display text-sm font-semibold leading-tight text-white sm:text-base">
+                                        {badge.label}
+                                    </p>
+                                </GlassCard>
+                            </motion.li>
+                        );
+                    })}
+                </motion.ul>
             </div>
         </section>
     );

@@ -90,7 +90,7 @@ export function Navbar() {
               aria-label="Falar no WhatsApp"
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              Falar no WhatsApp
+              Quero um diagnóstico
             </a>
           </div>
 
@@ -163,7 +163,7 @@ export function Navbar() {
                 className="btn-primary mt-3 w-full justify-center"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                Falar no WhatsApp
+                Quero um diagnóstico
               </a>
             </motion.div>
           )}

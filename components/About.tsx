@@ -38,8 +38,9 @@ export function About() {
                             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                             className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
                         >
-                            Não é mais um <span className="text-white/40 line-through">profissional de marketing</span>.
-                            É <span className="text-gradient-purple">precisão aplicada</span> ao seu dinheiro.
+                            Você precisa de alguém que pensa no{" "}
+                            <span className="text-gradient-purple">negócio inteiro</span>
+                            {" "}— não apenas no próximo anúncio.
                         </motion.h2>
 
                         <motion.div
@@ -48,14 +49,14 @@ export function About() {
                             className="mt-8 space-y-5 text-base leading-relaxed text-white/70 sm:text-lg"
                         >
                             <p>
-                                Você não precisa de mais um “profissional de marketing”. Você precisa de alguém que
-                                entende de números, que lê os dados como um livro e que trata o seu dinheiro como se
-                                fosse o dele.
+                                Você não precisa de mais relatórios, mais ferramentas ou mais canais digitais. Você
+                                precisa de alguém que entende de onde vêm seus clientes, identifica o que trava o
+                                crescimento e constrói uma estrutura digital que funciona de verdade.
                             </p>
                             <p>
-                                A Covex Digital nasce com um propósito claro: ser a prova de que tráfego pago bem feito
-                                transforma negócios. Sem histórico inflado, sem promessas vazias — só método, dedicação
-                                e resultado real.
+                                A Covex Digital é isso: uma parceria estratégica com clínicas, escritórios e pequenas
+                                empresas que querem mais clientes, mais presença e uma operação mais eficiente — com
+                                clareza sobre o que está sendo feito e por quê.
                             </p>
                         </motion.div>
                     </motion.div>
@@ -71,7 +72,7 @@ export function About() {
                             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl">
                                 <Image
                                     src="/vitor.webp"
-                                    alt="Vitor Oliveira — Gestor de Tráfego da Covex Digital"
+                                    alt="Vitor Oliveira — Estrategista Digital da Covex Digital"
                                     fill
                                     sizes="(max-width: 1024px) 384px, 400px"
                                     className="object-cover"
@@ -85,7 +86,7 @@ export function About() {
                                 Vitor Oliveira
                             </p>
                             <p className="mt-1.5 text-sm font-medium leading-tight" style={{ color: "#a78bfa" }}>
-                                Gestor de Tráfego · Covex Digital
+                                Estrategista Digital · Covex Digital
                             </p>
                         </GlassCard>
                     </motion.div>

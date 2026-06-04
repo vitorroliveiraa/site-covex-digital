@@ -12,7 +12,7 @@ const navLinks = [
     { href: "#contato", label: "Contato" },
 ];
 
-const services = ["Meta Ads", "Estratégia de Funil", "Análise & Otimização"];
+const services = ["Aquisição & Conversão", "Presença Digital", "Eficiência & Automação"];
 
 export function Footer() {
     const year = new Date().getFullYear();
@@ -45,8 +45,8 @@ export function Footer() {
                                 </span>
                             </a>
                             <p className="mt-5 max-w-md text-sm leading-relaxed text-white/60">
-                                Gestão de tráfego pago de alto impacto pra negócios que entendem que marketing sério é
-                                decisão estratégica, não despesa.
+                                Parceiro estratégico digital de clínicas, escritórios e pequenas empresas que querem
+                                crescer com mais clareza, presença e eficiência.
                             </p>
 
                             <div className="mt-6 flex items-center gap-3">

@@ -1,60 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Compass, LineChart, Search, Users2 } from "lucide-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMeta } from "@fortawesome/free-brands-svg-icons";
+import { ArrowUpRight, Globe, Settings2, Target } from "lucide-react";
 import { GlassCard } from "./ui/GlassCard";
 import { GradientOrb } from "./ui/GradientOrb";
 import { buildWhatsappUrl } from "@/lib/site";
 
-type IconProps = { className?: string; "aria-hidden"?: boolean | "true" | "false" };
+type LucideIcon = React.ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
 
-const MetaIcon = ({ className, "aria-hidden": ariaHidden }: IconProps) => (
-    <FontAwesomeIcon icon={faMeta} className={className} aria-hidden={ariaHidden} />
-);
+interface Service {
+    icon: LucideIcon;
+    title: string;
+    subtitle: string;
+    description: string;
+    highlight: string;
+    tags: string[];
+}
 
-const services = [
+const services: Service[] = [
     {
-        icon: MetaIcon,
-        title: "Meta Ads",
-        subtitle: "Facebook & Instagram",
+        icon: Target,
+        title: "Aquisição & Conversão",
+        subtitle: "Mais clientes com custo controlado",
         description:
-            "Campanhas de aquisição, remarketing e funis full-stack no Meta. Estrutura de conta limpa, criativos testados e otimização baseada em CAC, não em ego.",
-        highlight: "Aquisição & Funil",
-    },
-    // {
-    //   icon: Search,
-    //   title: 'Google Ads',
-    //   subtitle: 'Search, Display, YouTube e PMax',
-    //   description:
-    //     'Captura de demanda quente no Search, awareness no YouTube e escala com Performance Max. Estratégia por intenção e jornada — sem desperdiçar verba.',
-    //   highlight: 'Captura & Escala',
-    // },
-    {
-        icon: Compass,
-        title: "Estratégia de Funil Completo",
-        subtitle: "Topo, meio e fundo",
-        description:
-            "Mapeamento da jornada do seu cliente, distribuição de verba por etapa do funil e mensagens calibradas pra cada estágio. Marketing que conversa com vendas.",
-        highlight: "Funil 360º",
+            "Campanhas no Meta Ads e Google Ads construídas com foco em leads e vendas reais. Estratégia por intenção de compra, criativos testados continuamente e otimização baseada em CAC — sem verba desperdiçada.",
+        highlight: "Mais Clientes",
+        tags: ["Meta Ads", "Google Ads", "Landing Pages", "Geração de Leads"],
     },
     {
-        icon: LineChart,
-        title: "Análise & Otimização",
-        subtitle: "Dados que viram decisão",
+        icon: Globe,
+        title: "Presença Digital",
+        subtitle: "Encontrado por quem importa",
         description:
-            "Dashboards customizados, leitura de cohort, análise de criativo por desempenho e ajustes contínuos. Você enxerga o que sua conta de anúncio esconde.",
-        highlight: "Performance",
+            "Google Meu Negócio otimizado, estrutura digital consistente e posicionamento que constrói autoridade. Sua empresa presente nos momentos certos, pelos canais certos, pelas pessoas certas.",
+        highlight: "Mais Visibilidade",
+        tags: ["Google Meu Negócio", "SEO Local", "Reputação Online", "Identidade Digital"],
     },
-    // {
-    //   icon: Users2,
-    //   title: 'Consultoria em Tráfego Pago',
-    //   subtitle: 'Pra times in-house',
-    //   description:
-    //     'Mentoria estratégica para empresas com time interno. Auditoria, plano de ação, treinamento de equipe e acompanhamento. Acelero quem já está no jogo.',
-    //   highlight: 'Mentoria',
-    // },
+    {
+        icon: Settings2,
+        title: "Eficiência & Automação",
+        subtitle: "Menos operacional, mais estratégico",
+        description:
+            "Automações simples que eliminam trabalho repetitivo, organizam o atendimento e liberam seu time para o que importa. Tecnologia aplicada sem complexidade — resultado sem precisar de equipe técnica.",
+        highlight: "Mais Eficiência",
+        tags: ["Automações", "IA Aplicada", "Fluxos de Atendimento", "Organização Operacional"],
+    },
 ];
 
 const cardVariants = {
@@ -83,15 +73,15 @@ export function Services() {
                     className="mx-auto max-w-3xl text-center"
                 >
                     <span className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary-light">
-                        Serviços
+                        Soluções
                     </span>
                     <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-                        Operação completa de tráfego pago — do <span className="text-gradient-purple">criativo</span> ao{" "}
-                        <span className="text-gradient-purple">caixa</span>.
+                        Três frentes de atuação.{" "}
+                        <span className="text-gradient-purple">Um único objetivo</span>: crescer.
                     </h2>
                     <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-                        Cada serviço é desenhado pra atacar uma alavanca específica do seu crescimento. Sem pacote
-                        engessado, sem entrega genérica.
+                        Cada solução é desenhada para atacar uma alavanca real do seu negócio — não uma lista de
+                        entregáveis genéricos.
                     </p>
                 </motion.header>
 
@@ -99,9 +89,9 @@ export function Services() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-60px" }}
-                    transition={{ staggerChildren: 0.08, delayChildren: 0.15 }}
-                    className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-                    aria-label="Lista de serviços"
+                    transition={{ staggerChildren: 0.1, delayChildren: 0.15 }}
+                    className="mt-16 grid gap-6 lg:grid-cols-3"
+                    aria-label="Soluções da Covex Digital"
                 >
                     {services.map((service) => {
                         const Icon = service.icon;
@@ -127,16 +117,27 @@ export function Services() {
                                         {service.description}
                                     </p>
 
+                                    <div className="mt-5 flex flex-wrap gap-2" aria-label={`O que está incluído em ${service.title}`}>
+                                        {service.tags.map((tag) => (
+                                            <span
+                                                key={tag}
+                                                className="liquid-glass rounded-full px-2.5 py-1 text-[11px] font-medium text-white/60"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+
                                     <a
                                         href={buildWhatsappUrl(
-                                            `Olá! Tenho interesse no serviço de ${service.title} da Covex Digital.`,
+                                            `Olá! Tenho interesse em saber mais sobre ${service.title} da Covex Digital.`,
                                         )}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-colors hover:text-secondary-light"
                                         aria-label={`Conversar sobre ${service.title}`}
                                     >
-                                        Conversar sobre esse serviço
+                                        Quero saber mais
                                         <ArrowUpRight
                                             className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                                             aria-hidden="true"
