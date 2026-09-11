@@ -30,28 +30,27 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Covex Digital | Gestão de Tráfego Pago — Meta Ads & Google Ads',
+    default: 'Covex Digital | Presença Digital para Negócios Locais em João Pessoa',
     template: '%s | Covex Digital',
   },
   description: siteConfig.description,
   keywords: [
-    'gestor de tráfego pago',
-    'meta ads',
-    'google ads',
-    'tráfego pago',
-    'marketing digital',
+    'seo local joão pessoa',
+    'presença digital joão pessoa',
+    'google meu negócio joão pessoa',
+    'site para negócio local',
+    'marketing digital joão pessoa',
     'covex digital',
-    'gestão de anúncios',
+    'google meu negócio',
     'performance digital',
-    'roi marketing',
   ],
   authors: [{ name: 'Covex Digital' }],
   creator: 'Covex Digital',
   publisher: 'Covex Digital',
   openGraph: {
-    title: 'Covex Digital | Tráfego Pago com Performance',
+    title: 'Covex Digital | Presença Digital para Negócios Locais em João Pessoa',
     description:
-      'Gestão estratégica de Meta Ads e Google Ads. ROI real, sem promessas vazias.',
+      'Seu negócio achável no Google, com Google Meu Negócio, site e indexação técnica trabalhando juntos.',
     type: 'website',
     locale: 'pt_BR',
     url: siteConfig.url,
@@ -59,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Covex Digital | Tráfego Pago com Performance',
+    title: 'Covex Digital | Presença Digital para Negócios Locais em João Pessoa',
     description:
-      'Gestão estratégica de Meta Ads e Google Ads. ROI real, sem promessas vazias.',
+      'Seu negócio achável no Google, com Google Meu Negócio, site e indexação técnica trabalhando juntos.',
   },
   robots: {
     index: true,
@@ -77,6 +76,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  icons: {
+    icon: '/favicon.svg',
+  },
   category: 'business',
 };
 
@@ -87,18 +89,20 @@ const jsonLd = {
   name: 'Covex Digital',
   description: siteConfig.description,
   url: siteConfig.url,
-  image: `${siteConfig.url}/og-image.jpg`,
   priceRange: '$$',
   telephone: `+${siteConfig.whatsapp.number}`,
   areaServed: {
-    '@type': 'Country',
-    name: 'Brasil',
+    '@type': 'City',
+    name: 'João Pessoa',
+    containedInPlace: {
+      '@type': 'State',
+      name: 'Paraíba',
+    },
   },
   serviceType: [
-    'Gestão de Tráfego Pago',
-    'Meta Ads',
-    'Google Ads',
-    'Consultoria em Marketing Digital',
+    'Presença Digital e SEO Local',
+    'Google Meu Negócio',
+    'Desenvolvimento de Sites e Landing Pages',
   ],
   sameAs: [siteConfig.social.instagram, siteConfig.social.linkedin],
 };

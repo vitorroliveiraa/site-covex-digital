@@ -48,7 +48,7 @@ export function Navbar() {
           <a
             href="#hero"
             className="group flex items-center gap-2"
-            aria-label="Covex Digital — voltar ao topo"
+            aria-label="Covex Digital, voltar ao topo"
           >
             <span className="relative flex h-9 w-9 items-center justify-center">
               <span className="absolute inset-0 -m-1 rounded-full bg-secondary/40 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

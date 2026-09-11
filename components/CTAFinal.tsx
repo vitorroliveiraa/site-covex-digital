@@ -13,7 +13,6 @@ export function CTAFinal() {
             className="relative isolate flex min-h-[80vh] items-center overflow-hidden py-24 md:py-32"
         >
             <div className="absolute inset-0 -z-10 bg-mesh-gradient" aria-hidden="true" />
-            <div className="grid-bg absolute inset-0 -z-10 opacity-60" aria-hidden="true" />
 
             <GradientOrb color="purple" size={620} className="-left-32 top-0" opacity={0.55} />
             <GradientOrb
@@ -42,10 +41,7 @@ export function CTAFinal() {
                         variant="strong"
                         className="mx-auto max-w-4xl px-8 py-14 text-center sm:px-12 sm:py-20"
                     >
-                        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary-light">
-                            Vamos conversar
-                        </span>
-                        <h2 className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+                        <h2 className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                             Pronto para construir uma{" "}
                             <span className="text-gradient-purple">estrutura digital</span> que trabalha pelo seu
                             negócio?
@@ -70,7 +66,7 @@ export function CTAFinal() {
                                 Quero meu diagnóstico digital
                             </motion.a>
                             <p className="text-sm text-white/55">
-                                Sem compromisso · Sem contrato · Só clareza
+                                Sem compromisso. Sem contrato. Só clareza.
                             </p>
                         </div>
                     </GlassCard>

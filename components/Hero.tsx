@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, MessageCircle, Sparkles, Target, Zap } from "lucide-react";
+import { ArrowRight, MapPin, MessageCircle, Search, Zap } from "lucide-react";
 import { GlassCard } from "./ui/GlassCard";
 import { GradientOrb } from "./ui/GradientOrb";
 import { buildWhatsappUrl } from "@/lib/site";
 
 const heroBadges = [
     {
-        icon: Target,
-        label: "Aquisição de Clientes",
-    },
-    {
-        icon: Globe,
-        label: "Presença Digital",
+        icon: MapPin,
+        label: "Google Meu Negócio",
     },
     {
         icon: Zap,
-        label: "Eficiência Operacional",
+        label: "Site Otimizado",
+    },
+    {
+        icon: Search,
+        label: "Indexação Local",
     },
 ];
 
@@ -42,7 +42,6 @@ export function Hero() {
     return (
         <section id="hero" className="relative isolate overflow-hidden pb-24 pt-36 md:pt-44 lg:pb-32 lg:pt-48">
             <div className="absolute inset-0 -z-10 bg-mesh-gradient" aria-hidden="true" />
-            <div className="grid-bg absolute inset-0 -z-10" aria-hidden="true" />
 
             <GradientOrb color="purple" size={520} className="-left-32 top-10" opacity={0.55} />
             <GradientOrb
@@ -67,31 +66,21 @@ export function Hero() {
                     animate="show"
                     className="mx-auto flex max-w-4xl flex-col items-center text-center"
                 >
-                    <motion.div variants={itemVariants}>
-                        <div className="liquid-glass-purple inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-white/85">
-                            <Sparkles className="h-3.5 w-3.5 text-secondary-light" aria-hidden="true" />
-                            Parceiro Estratégico Digital
-                        </div>
-                    </motion.div>
-
                     <motion.h1
                         variants={itemVariants}
-                        className="mt-7 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+                        className="mt-7 text-balance font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl"
                     >
-                        Estrutura Digital que{" "}
-                        <span className="text-gradient-purple">Cresce</span>
-                        <br className="hidden sm:block" />
-                        com o seu Negócio.
+                        Seu negócio{" "}
+                        <span className="text-gradient-purple">aparece no Google</span>
+                        {" "}em João Pessoa?
                     </motion.h1>
 
                     <motion.p
                         variants={itemVariants}
                         className="mt-7 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
                     >
-                        A Covex Digital é parceira estratégica de clínicas, escritórios e pequenas empresas que querem{" "}
-                        <strong className="font-semibold text-white">atrair mais clientes</strong>,{" "}
-                        <strong className="font-semibold text-white">fortalecer a presença digital</strong> e operar
-                        com mais eficiência — sem depender de sorte.
+                        A maioria não aparece na busca local. Quem aparece primeiro fecha o cliente. A Covex{" "}
+                        <strong className="font-semibold text-white">constrói essa estrutura pra você</strong>.
                     </motion.p>
 
                     <motion.div variants={itemVariants} className="mt-10 flex flex-col items-center gap-4 sm:flex-row">

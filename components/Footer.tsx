@@ -12,7 +12,7 @@ const navLinks = [
     { href: "#contato", label: "Contato" },
 ];
 
-const services = ["Aquisição & Conversão", "Presença Digital", "Eficiência & Automação"];
+const services = ["Presença Digital", "Pronto pra Tráfego Pago", "Gestão de Tráfego"];
 
 export function Footer() {
     const year = new Date().getFullYear();
@@ -45,8 +45,8 @@ export function Footer() {
                                 </span>
                             </a>
                             <p className="mt-5 max-w-md text-sm leading-relaxed text-white/60">
-                                Parceiro estratégico digital de clínicas, escritórios e pequenas empresas que querem
-                                crescer com mais clareza, presença e eficiência.
+                                Presença digital e estrutura pronta pra tráfego pago para negócios locais em João
+                                Pessoa.
                             </p>
 
                             <div className="mt-6 flex items-center gap-3">
@@ -89,7 +89,7 @@ export function Footer() {
 
                         <div className="grid grid-cols-2 gap-8 lg:col-span-7 lg:grid-cols-3">
                             <div>
-                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-secondary-light">
+                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
                                     Navegação
                                 </h3>
                                 <ul className="mt-5 space-y-3">
@@ -107,7 +107,7 @@ export function Footer() {
                             </div>
 
                             <div>
-                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-secondary-light">
+                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
                                     Serviços
                                 </h3>
                                 <ul className="mt-5 space-y-3">
@@ -120,7 +120,7 @@ export function Footer() {
                             </div>
 
                             <div>
-                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-secondary-light">
+                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
                                     Contato
                                 </h3>
                                 <ul className="mt-5 space-y-3">

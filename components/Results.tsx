@@ -11,13 +11,13 @@ const differentials = [
         icon: Compass,
         title: "Visão Estratégica",
         description:
-            "Não executo antes de entender. Cada solução começa com diagnóstico do negócio, do mercado e dos objetivos reais — não com suposições.",
+            "Não executo antes de entender. Cada solução começa com diagnóstico do negócio, do mercado e dos objetivos reais, não com suposições.",
     },
     {
         icon: BarChart2,
         title: "Decisões por Dados",
         description:
-            "Nada de achismo. Cada ajuste é baseado em métricas reais e análise constante do que está funcionando — e do que pode melhorar.",
+            "Nada de achismo. Cada ajuste é baseado em métricas reais e análise constante do que está funcionando e do que pode melhorar.",
     },
     {
         icon: Target,
@@ -68,7 +68,7 @@ export function Results() {
                         contratado.
                     </h2>
                     <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-                        A diferença está na forma como o trabalho é conduzido — com método, contexto e compromisso
+                        A diferença está na forma como o trabalho é conduzido, com método, contexto e compromisso
                         com o que realmente importa.
                     </p>
                 </motion.header>
@@ -110,17 +110,14 @@ export function Results() {
                         className="lg:col-span-5"
                     >
                         <GlassCard variant="purple" className="flex h-full flex-col p-8 lg:p-10">
-                            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary-light">
-                                Para quem faz sentido
-                            </span>
-                            <h3 className="mt-5 font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
+                            <h3 className="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
                                 Não atendo todo mundo.{" "}
                                 <span className="text-gradient-purple">E isso é intencional.</span>
                             </h3>
                             <p className="mt-6 text-sm leading-relaxed text-white/75 sm:text-base">
                                 A Covex Digital é parceira de negócios que entendem que crescimento digital exige
                                 estratégia, não apenas ferramentas. Se você quer um resultado previsível, uma presença
-                                digital sólida e uma operação mais eficiente —{" "}
+                                digital sólida e uma operação mais eficiente,{" "}
                                 <strong className="font-semibold text-white">vamos conversar</strong>.
                             </p>
                         </GlassCard>

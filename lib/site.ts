@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Covex Digital',
   url: 'https://covexdigital.com.br',
   description:
-    'Parceiro estratégico digital de clínicas, escritórios e pequenas empresas. Aquisição de clientes, presença digital e eficiência operacional — com estratégia, clareza e resultado real.',
+    'Presença digital para negócios locais em João Pessoa: imobiliárias, clínicas de estética, arquitetura, obras, vidraçarias, restaurantes e pousadas.',
   whatsapp: {
     number: '5545988285931',
     display: '+55 (45) 98828-5931',

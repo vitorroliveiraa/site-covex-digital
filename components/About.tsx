@@ -13,7 +13,6 @@ const fadeUp = {
 export function About() {
     return (
         <section id="sobre" className="relative isolate overflow-hidden section-padding">
-            <div className="grid-bg absolute inset-0 -z-10 opacity-60" aria-hidden="true" />
             <GradientOrb color="purple" size={520} className="-right-40 top-20" opacity={0.35} />
 
             <div className="container-fluid">
@@ -40,7 +39,7 @@ export function About() {
                         >
                             Você precisa de alguém que pensa no{" "}
                             <span className="text-gradient-purple">negócio inteiro</span>
-                            {" "}— não apenas no próximo anúncio.
+                            {", "}não só no próximo anúncio.
                         </motion.h2>
 
                         <motion.div
@@ -54,9 +53,9 @@ export function About() {
                                 crescimento e constrói uma estrutura digital que funciona de verdade.
                             </p>
                             <p>
-                                A Covex Digital é isso: uma parceria estratégica com clínicas, escritórios e pequenas
-                                empresas que querem mais clientes, mais presença e uma operação mais eficiente — com
-                                clareza sobre o que está sendo feito e por quê.
+                                A Covex Digital é isso: uma parceria estratégica com negócios locais em João Pessoa
+                                que querem mais clientes, mais presença e uma operação mais eficiente, com clareza
+                                sobre o que está sendo feito e por quê.
                             </p>
                         </motion.div>
                     </motion.div>
@@ -72,7 +71,7 @@ export function About() {
                             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl">
                                 <Image
                                     src="/vitor.webp"
-                                    alt="Vitor Oliveira — Estrategista Digital da Covex Digital"
+                                    alt="Vitor Oliveira, Estrategista Digital da Covex Digital"
                                     fill
                                     sizes="(max-width: 1024px) 384px, 400px"
                                     className="object-cover"
