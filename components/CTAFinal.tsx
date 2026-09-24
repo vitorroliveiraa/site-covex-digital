@@ -12,22 +12,18 @@ export function CTAFinal() {
             id="contato"
             className="relative isolate flex min-h-[80vh] items-center overflow-hidden py-24 md:py-32"
         >
-            <div className="absolute inset-0 -z-10 bg-mesh-gradient" aria-hidden="true" />
+            <div
+                className="absolute inset-0 -z-10 bg-mesh-gradient [mask-image:linear-gradient(to_bottom,transparent,black_30%,black_70%,transparent)]"
+                aria-hidden="true"
+            />
 
-            <GradientOrb color="purple" size={620} className="-left-32 top-0" opacity={0.55} />
+            <GradientOrb color="purple" size={560} className="-left-32 top-0" opacity={0.5} />
             <GradientOrb
                 color="mixed"
-                size={520}
+                size={460}
                 className="-right-32 bottom-0"
-                opacity={0.5}
+                opacity={0.4}
                 style={{ animationDelay: "4s" }}
-            />
-            <GradientOrb
-                color="white"
-                size={320}
-                className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                opacity={0.15}
-                style={{ animationDelay: "7s" }}
             />
 
             <div className="container-fluid">
@@ -42,11 +38,10 @@ export function CTAFinal() {
                         className="mx-auto max-w-4xl px-8 py-14 text-center sm:px-12 sm:py-20"
                     >
                         <h2 className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-                            Pronto para construir uma{" "}
-                            <span className="text-gradient-purple">estrutura digital</span> que trabalha pelo seu
-                            negócio?
+                            Pronto para construir uma <span className="text-destaque">estrutura digital</span> que
+                            trabalha pelo seu negócio?
                         </h2>
-                        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+                        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-texto/70">
                             Uma conversa de 15 minutos pode revelar as principais oportunidades de crescimento que
                             seu negócio ainda não está aproveitando.
                         </p>
@@ -58,15 +53,19 @@ export function CTAFinal() {
                                 )}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn-primary animate-pulse-glow text-base sm:text-lg"
+                                className="btn-primary text-base sm:text-lg"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
                                 <MessageCircle className="h-5 w-5" aria-hidden="true" />
                                 Quero meu diagnóstico digital
                             </motion.a>
-                            <p className="text-sm text-white/55">
+                            <p className="text-base text-texto/65">
                                 Sem compromisso. Sem contrato. Só clareza.
+                            </p>
+                            <p className="max-w-md text-base text-texto/65">
+                                A estrutura também já sai pronta pra Meta Pixel e Google Ads, se um dia você quiser
+                                anunciar.
                             </p>
                         </div>
                     </GlassCard>

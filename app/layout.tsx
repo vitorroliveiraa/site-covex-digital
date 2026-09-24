@@ -1,11 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Syne, Plus_Jakarta_Sans } from 'next/font/google';
-import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import { siteConfig } from '@/lib/site';
 import './globals.css';
-
-faConfig.autoAddCss = false;
 
 const display = Syne({
   subsets: ['latin'],
@@ -22,7 +18,10 @@ const body = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#0a0a0a',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f6f5fa' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+  ],
   width: 'device-width',
   initialScale: 1,
 };
@@ -37,6 +36,8 @@ export const metadata: Metadata = {
   keywords: [
     'seo local joão pessoa',
     'presença digital joão pessoa',
+    'seo para ia joão pessoa',
+    'geo generative engine optimization',
     'google meu negócio joão pessoa',
     'site para negócio local',
     'marketing digital joão pessoa',
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Covex Digital | Presença Digital para Negócios Locais em João Pessoa',
     description:
-      'Seu negócio achável no Google, com Google Meu Negócio, site e indexação técnica trabalhando juntos.',
+      'Seu negócio encontrado no Google e citado pelas ferramentas de IA, com Google Meu Negócio, site e dados estruturados trabalhando juntos.',
     type: 'website',
     locale: 'pt_BR',
     url: siteConfig.url,
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Covex Digital | Presença Digital para Negócios Locais em João Pessoa',
     description:
-      'Seu negócio achável no Google, com Google Meu Negócio, site e indexação técnica trabalhando juntos.',
+      'Seu negócio encontrado no Google e citado pelas ferramentas de IA, com Google Meu Negócio, site e dados estruturados trabalhando juntos.',
   },
   robots: {
     index: true,
@@ -102,10 +103,14 @@ const jsonLd = {
   serviceType: [
     'Presença Digital e SEO Local',
     'Google Meu Negócio',
+    'Estrutura de Dados para Ferramentas de IA (GEO)',
     'Desenvolvimento de Sites e Landing Pages',
   ],
   sameAs: [siteConfig.social.instagram, siteConfig.social.linkedin],
 };
+
+// Define o tema antes da primeira pintura: escolha salva, senão preferência do sistema.
+const scriptTemaInicial = `(function(){var tema;try{tema=localStorage.getItem('covex-tema')}catch(e){}if(tema!=='claro'&&tema!=='escuro'){tema=matchMedia('(prefers-color-scheme: light)').matches?'claro':'escuro'}document.documentElement.dataset.tema=tema})()`;
 
 export default function RootLayout({
   children,
@@ -113,14 +118,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${display.variable} ${body.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${display.variable} ${body.variable}`}
+      suppressHydrationWarning
+    >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: scriptTemaInicial }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-dark text-primary font-sans antialiased">
+      <body className="bg-fundo text-texto font-sans antialiased">
         {children}
       </body>
     </html>

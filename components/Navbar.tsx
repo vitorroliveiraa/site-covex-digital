@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { buildWhatsappUrl } from '@/lib/site';
+import { ComponentAlternarTema } from './ComponentAlternarTema';
 
 const navLinks = [
   { href: '#sobre', label: 'Sobre' },
@@ -30,6 +31,15 @@ export function Navbar() {
     return () => {
       document.body.style.overflow = '';
     };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const fecharComEsc = (evento: KeyboardEvent) => {
+      if (evento.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', fecharComEsc);
+    return () => window.removeEventListener('keydown', fecharComEsc);
   }, [open]);
 
   return (
@@ -58,12 +68,12 @@ export function Navbar() {
                 width={36}
                 height={36}
                 priority
-                className="relative h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110"
+                className="logo-marca relative h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110"
               />
             </span>
-            <span className="font-display text-xl font-bold tracking-tight text-primary">
-              Covex<span className="text-secondary-light">.</span>
-              <span className="font-medium text-white/70">Digital</span>
+            <span className="font-display text-xl font-bold tracking-tight text-texto">
+              Covex<span className="text-destaque">.</span>
+              <span className="font-medium text-texto/70">Digital</span>
             </span>
           </a>
 
@@ -72,7 +82,7 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="group relative rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
+                  className="group relative rounded-full px-4 py-2 text-sm font-medium text-texto/70 transition-colors hover:text-texto"
                 >
                   {link.label}
                   <span className="absolute inset-x-4 bottom-1 h-px scale-x-0 bg-gradient-to-r from-transparent via-secondary-light to-transparent transition-transform group-hover:scale-x-100" />
@@ -81,7 +91,8 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-3 lg:flex">
+            <ComponentAlternarTema />
             <a
               href={buildWhatsappUrl()}
               target="_blank"
@@ -94,43 +105,48 @@ export function Navbar() {
             </a>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="liquid-glass flex h-11 w-11 items-center justify-center rounded-full lg:hidden"
-            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-            aria-expanded={open}
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {open ? (
-                <motion.span
-                  key="x"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X className="h-5 w-5" />
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu className="h-5 w-5" />
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <ComponentAlternarTema />
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="liquid-glass flex h-11 w-11 items-center justify-center rounded-full"
+              aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+              aria-expanded={open}
+              aria-controls="menu-mobile"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {open ? (
+                  <motion.span
+                    key="x"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X className="h-5 w-5" />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu className="h-5 w-5" />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </nav>
 
         <AnimatePresence>
           {open && (
             <motion.div
               key="mobile-menu"
+              id="menu-mobile"
               initial={{ opacity: 0, y: -16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
@@ -148,7 +164,7 @@ export function Navbar() {
                     <a
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="block rounded-2xl px-5 py-4 text-base font-medium text-white/85 transition-colors hover:bg-white/5 hover:text-white"
+                      className="block rounded-2xl px-5 py-4 text-base font-medium text-texto/85 transition-colors hover:bg-texto/5 hover:text-texto"
                     >
                       {link.label}
                     </a>

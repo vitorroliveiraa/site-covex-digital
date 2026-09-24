@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { ClipboardCheck, Rocket, Search, TrendingUp } from 'lucide-react';
 import { GlassCard } from './ui/GlassCard';
-import { GradientOrb } from './ui/GradientOrb';
 
 const steps = [
   {
@@ -11,14 +10,14 @@ const steps = [
     icon: Search,
     title: 'Diagnóstico',
     description:
-      'Auditoria do que existe hoje: Google Meu Negócio, site e indexação. Identificação de buracos e oportunidades reais.',
+      'Auditoria do que existe hoje: Google Meu Negócio, site e dados estruturados. Como buscadores e IAs enxergam seu negócio, com os buracos e as oportunidades reais.',
   },
   {
     number: '02',
     icon: ClipboardCheck,
     title: 'Estrutura',
     description:
-      'Plano da presença completa: GMN otimizado, site rápido e indexação correta, com prioridade clara do que resolve primeiro.',
+      'Plano da presença completa: GMN otimizado, site rápido e dados estruturados corretos, com prioridade clara do que resolve primeiro.',
   },
   {
     number: '03',
@@ -32,7 +31,7 @@ const steps = [
     icon: TrendingUp,
     title: 'Acompanhamento',
     description:
-      'Monitoramento da posição no Google e do tráfego orgânico, com ajustes contínuos conforme o negócio evolui.',
+      'Monitoramento da posição no Google, do tráfego orgânico e de como o negócio aparece em respostas de IA, com ajustes contínuos conforme ele evolui.',
   },
 ];
 
@@ -42,20 +41,6 @@ export function Process() {
       id="processo"
       className="relative isolate overflow-hidden section-padding"
     >
-      <GradientOrb
-        color="purple"
-        size={460}
-        className="-right-32 top-20"
-        opacity={0.28}
-      />
-      <GradientOrb
-        color="mixed"
-        size={400}
-        className="-left-24 bottom-10"
-        opacity={0.22}
-        style={{ animationDelay: '5s' }}
-      />
-
       <div className="container-fluid">
         <motion.header
           initial={{ opacity: 0, y: 24 }}
@@ -65,12 +50,12 @@ export function Process() {
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            Um método claro do <span className="text-gradient-purple">primeiro briefing</span>
+            Um método claro do <span className="text-destaque">primeiro briefing</span>
             {' '}até o resultado.
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-texto/65 sm:text-lg">
             Sem improviso. Cada etapa existe pra reduzir risco e encurtar o caminho
-            até você aparecer no Google.
+            até você ser encontrado, no Google e nas ferramentas de IA.
           </p>
         </motion.header>
 
@@ -83,7 +68,7 @@ export function Process() {
         >
           <GlassCard variant="strong" className="overflow-hidden">
             <ol
-              className="grid divide-y divide-white/10 md:grid-cols-4 md:divide-x md:divide-y-0"
+              className="grid divide-y divide-texto/10 md:grid-cols-4 md:divide-x md:divide-y-0"
               aria-label="Etapas do processo de trabalho"
             >
               {steps.map((step) => {
@@ -92,16 +77,16 @@ export function Process() {
                   <li key={step.number} className="p-7 md:p-8">
                     <div className="flex items-center gap-3">
                       <span className="liquid-glass-purple flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-                        <Icon className="h-4 w-4 text-secondary-light" aria-hidden="true" />
+                        <Icon className="h-4 w-4 text-destaque" aria-hidden="true" />
                       </span>
-                      <span className="font-display text-sm font-semibold text-secondary-light">
+                      <span className="font-display text-sm font-semibold text-destaque">
                         {step.number}
                       </span>
                     </div>
-                    <h3 className="mt-5 font-display text-lg font-bold text-white">
+                    <h3 className="mt-5 font-display text-lg font-bold text-texto">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/65">
+                    <p className="mt-2 text-base leading-relaxed text-texto/65">
                       {step.description}
                     </p>
                   </li>

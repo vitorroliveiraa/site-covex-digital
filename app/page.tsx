@@ -8,10 +8,11 @@ import { Process } from '@/components/Process';
 import { CTAFinal } from '@/components/CTAFinal';
 import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { ComponentProvedorMovimento } from '@/components/ComponentProvedorMovimento';
 
 export default function HomePage() {
   return (
-    <>
+    <ComponentProvedorMovimento>
       <Navbar />
       <main className="relative">
         <Hero />
@@ -24,6 +25,6 @@ export default function HomePage() {
       </main>
       <Footer />
       <WhatsAppButton />
-    </>
+    </ComponentProvedorMovimento>
   );
 }

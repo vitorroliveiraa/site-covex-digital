@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { GlassCard } from "./ui/GlassCard";
-import { GradientOrb } from "./ui/GradientOrb";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 28 },
@@ -13,8 +12,6 @@ const fadeUp = {
 export function About() {
     return (
         <section id="sobre" className="relative isolate overflow-hidden section-padding">
-            <GradientOrb color="purple" size={520} className="-right-40 top-20" opacity={0.35} />
-
             <div className="container-fluid">
                 <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
                     <motion.div
@@ -24,28 +21,20 @@ export function About() {
                         transition={{ staggerChildren: 0.1 }}
                         className="lg:col-span-7"
                     >
-                        <motion.span
-                            variants={fadeUp}
-                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                            className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary-light"
-                        >
-                            Sobre a Covex
-                        </motion.span>
-
                         <motion.h2
                             variants={fadeUp}
                             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                            className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
+                            className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
                         >
                             Você precisa de alguém que pensa no{" "}
-                            <span className="text-gradient-purple">negócio inteiro</span>
+                            <span className="text-destaque">negócio inteiro</span>
                             {", "}não só no próximo anúncio.
                         </motion.h2>
 
                         <motion.div
                             variants={fadeUp}
                             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                            className="mt-8 space-y-5 text-base leading-relaxed text-white/70 sm:text-lg"
+                            className="mt-8 max-w-[52ch] space-y-5 text-lg leading-relaxed text-texto/70"
                         >
                             <p>
                                 Você não precisa de mais relatórios, mais ferramentas ou mais canais digitais. Você
@@ -81,10 +70,10 @@ export function About() {
                         </GlassCard>
 
                         <GlassCard variant="strong" className="mt-4 px-6 py-4 text-center">
-                            <p className="font-display text-lg font-semibold leading-tight text-white">
+                            <p className="font-display text-lg font-semibold leading-tight text-texto">
                                 Vitor Oliveira
                             </p>
-                            <p className="mt-1.5 text-sm font-medium leading-tight" style={{ color: "#a78bfa" }}>
+                            <p className="mt-1.5 text-sm font-medium leading-tight text-destaque">
                                 Estrategista Digital · Covex Digital
                             </p>
                         </GlassCard>

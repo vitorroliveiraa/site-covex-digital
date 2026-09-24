@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, MessageCircle, Search, Zap } from "lucide-react";
-import { GradientOrb } from "./ui/GradientOrb";
+import { Braces, MapPin, MessageCircle, Zap } from "lucide-react";
 import { buildWhatsappUrl } from "@/lib/site";
 
 type LucideIcon = React.ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
@@ -18,34 +17,25 @@ const services: Service[] = [
         icon: MapPin,
         title: "Google Meu Negócio",
         description:
-            "Categorias certas, fotos, avaliações e horário sempre atualizado. É o que aparece primeiro no Google Maps quando alguém pesquisa perto.",
+            "Categorias certas, fotos, avaliações e horário sempre atualizado. É o que aparece primeiro no Google Maps quando alguém pesquisa perto, e uma das fontes que buscadores e IAs usam pra saber que seu negócio existe.",
     },
     {
         icon: Zap,
         title: "Site rápido e claro",
         description:
-            "Carrega rápido, funciona bem no celular e leva direto pro WhatsApp. Sem enrolação pro cliente decidir.",
+            "Carrega rápido, funciona bem no celular e leva direto pro WhatsApp. O texto explica com clareza o que você faz, pra quem e onde, do jeito que uma pessoa ou uma IA consegue entender.",
     },
     {
-        icon: Search,
-        title: "Indexação técnica",
+        icon: Braces,
+        title: "Dados estruturados e indexação",
         description:
-            "Schema certo pro seu tipo de negócio, sitemap, estrutura que o Google entende e indexa de verdade.",
+            "Schema certo pro seu tipo de negócio, sitemap e páginas organizadas pro Google e pras ferramentas de IA lerem a informação sem ambiguidade.",
     },
 ];
 
 export function Services() {
     return (
         <section id="servicos" className="relative isolate overflow-hidden section-padding">
-            <GradientOrb color="purple" size={600} className="-left-40 top-1/3" opacity={0.32} />
-            <GradientOrb
-                color="mixed"
-                size={400}
-                className="-right-32 bottom-10"
-                opacity={0.28}
-                style={{ animationDelay: "6s" }}
-            />
-
             <div className="container-fluid">
                 <motion.header
                     initial={{ opacity: 0, y: 24 }}
@@ -55,16 +45,15 @@ export function Services() {
                     className="max-w-2xl"
                 >
                     <h2 className="text-balance font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-                        Presença digital é mais do que{" "}
-                        <span className="text-gradient-purple">ter um site</span>.
+                        Ser encontrado vai além de <span className="text-destaque">ter um site</span>.
                     </h2>
-                    <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-                        GMN, site e indexação técnica trabalhando juntos. Sem isso, o site existe mas ninguém
-                        encontra.
+                    <p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-texto/65">
+                        Google Meu Negócio, site e estrutura de dados trabalhando juntos pra você ser encontrado,
+                        seja no Google, seja quando alguém pergunta pra uma IA.
                     </p>
                 </motion.header>
 
-                <div className="mt-14 divide-y divide-white/10 border-t border-white/10">
+                <div className="mt-14 divide-y divide-texto/10 border-t border-texto/10">
                     {services.map((service, idx) => {
                         const Icon = service.icon;
                         return (
@@ -78,13 +67,13 @@ export function Services() {
                             >
                                 <div className="flex items-center gap-4 md:col-span-4">
                                     <span className="liquid-glass-purple flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
-                                        <Icon className="h-5 w-5 text-secondary-light" aria-hidden="true" />
+                                        <Icon className="h-5 w-5 text-destaque" aria-hidden="true" />
                                     </span>
-                                    <h3 className="font-display text-xl font-bold text-white">
+                                    <h3 className="font-display text-xl font-bold text-texto">
                                         {service.title}
                                     </h3>
                                 </div>
-                                <p className="text-sm leading-relaxed text-white/65 sm:text-base md:col-span-8">
+                                <p className="max-w-[52ch] text-base leading-relaxed text-texto/65 md:col-span-8">
                                     {service.description}
                                 </p>
                             </motion.div>
@@ -99,8 +88,8 @@ export function Services() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
                 >
-                    <p className="max-w-md text-sm leading-relaxed text-white/50">
-                        A estrutura já sai com Meta Pixel e Google Ads prontos pra quando você quiser anunciar.
+                    <p className="max-w-md text-base leading-relaxed text-texto/65">
+                        É uma base que aumenta suas chances ao longo do tempo, sem promessa de posição ou prazo.
                     </p>
                     <a
                         href={buildWhatsappUrl(
