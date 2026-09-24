@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Instagram, Facebook, Mail, MessageCircle } from "lucide-react";
+import { Instagram, Mail, MessageCircle } from "lucide-react";
 import { buildWhatsappUrl, siteConfig } from "@/lib/site";
 
 const navLinks = [
@@ -12,7 +12,7 @@ const navLinks = [
     { href: "#contato", label: "Contato" },
 ];
 
-const services = ["Presença Digital", "Pronto pra Tráfego Pago", "Gestão de Tráfego"];
+const services = ["Presença Digital", "Estrutura pra IA", "Google Meu Negócio"];
 
 export function Footer() {
     const year = new Date().getFullYear();
@@ -36,17 +36,17 @@ export function Footer() {
                                         alt="Covex Digital"
                                         width={36}
                                         height={36}
-                                        className="relative h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110"
+                                        className="logo-marca relative h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110"
                                     />
                                 </span>
-                                <span className="font-display text-xl font-bold tracking-tight text-primary">
-                                    Covex<span className="text-secondary-light">.</span>
-                                    <span className="font-medium text-white/70">Digital</span>
+                                <span className="font-display text-xl font-bold tracking-tight text-texto">
+                                    Covex<span className="text-destaque">.</span>
+                                    <span className="font-medium text-texto/70">Digital</span>
                                 </span>
                             </a>
-                            <p className="mt-5 max-w-md text-sm leading-relaxed text-white/60">
-                                Presença digital e estrutura pronta pra tráfego pago para negócios locais em João
-                                Pessoa.
+                            <p className="mt-5 max-w-md text-base leading-relaxed text-texto/65">
+                                Presença digital e estrutura pra ser encontrado no Google e nas ferramentas de IA,
+                                para negócios locais em João Pessoa.
                             </p>
 
                             <div className="mt-6 flex items-center gap-3">
@@ -54,7 +54,7 @@ export function Footer() {
                                     href={buildWhatsappUrl()}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:text-secondary-light"
+                                    className="liquid-glass flex h-11 w-11 items-center justify-center rounded-full text-texto transition-colors hover:text-destaque"
                                     aria-label="WhatsApp"
                                 >
                                     <MessageCircle className="h-4 w-4" />
@@ -63,23 +63,14 @@ export function Footer() {
                                     href={siteConfig.social.instagram}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:text-secondary-light"
+                                    className="liquid-glass flex h-11 w-11 items-center justify-center rounded-full text-texto transition-colors hover:text-destaque"
                                     aria-label="Instagram"
                                 >
                                     <Instagram className="h-4 w-4" />
                                 </a>
-                                {/* <a
-                                    href={siteConfig.social.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:text-secondary-light"
-                                    aria-label="LinkedIn"
-                                >
-                                    <Facebook className="h-4 w-4" />
-                                </a> */}
                                 <a
                                     href={`mailto:${siteConfig.email}`}
-                                    className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:text-secondary-light"
+                                    className="liquid-glass flex h-11 w-11 items-center justify-center rounded-full text-texto transition-colors hover:text-destaque"
                                     aria-label="E-mail"
                                 >
                                     <Mail className="h-4 w-4" />
@@ -89,15 +80,15 @@ export function Footer() {
 
                         <div className="grid grid-cols-2 gap-8 lg:col-span-7 lg:grid-cols-3">
                             <div>
-                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
+                                <h3 className="text-sm font-semibold text-texto">
                                     Navegação
                                 </h3>
-                                <ul className="mt-5 space-y-3">
+                                <ul className="mt-4 space-y-1">
                                     {navLinks.map((link) => (
                                         <li key={link.href}>
                                             <a
                                                 href={link.href}
-                                                className="text-sm text-white/65 transition-colors hover:text-white"
+                                                className="inline-block py-2.5 text-base text-texto/65 transition-colors hover:text-texto"
                                             >
                                                 {link.label}
                                             </a>
@@ -107,12 +98,12 @@ export function Footer() {
                             </div>
 
                             <div>
-                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
+                                <h3 className="text-sm font-semibold text-texto">
                                     Serviços
                                 </h3>
-                                <ul className="mt-5 space-y-3">
+                                <ul className="mt-4 space-y-1">
                                     {services.map((s) => (
-                                        <li key={s} className="text-sm text-white/65">
+                                        <li key={s} className="py-2.5 text-base text-texto/65">
                                             {s}
                                         </li>
                                     ))}
@@ -120,16 +111,16 @@ export function Footer() {
                             </div>
 
                             <div>
-                                <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
+                                <h3 className="text-sm font-semibold text-texto">
                                     Contato
                                 </h3>
-                                <ul className="mt-5 space-y-3">
+                                <ul className="mt-4 space-y-1">
                                     <li>
                                         <a
                                             href={buildWhatsappUrl()}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-sm text-white/65 transition-colors hover:text-white"
+                                            className="inline-block py-2.5 text-base text-texto/65 transition-colors hover:text-texto"
                                         >
                                             {siteConfig.whatsapp.display}
                                         </a>
@@ -137,20 +128,20 @@ export function Footer() {
                                     <li>
                                         <a
                                             href={`mailto:${siteConfig.email}`}
-                                            className="text-sm text-white/65 transition-colors hover:text-white"
+                                            className="inline-block py-2.5 text-base text-texto/65 transition-colors hover:text-texto"
                                         >
                                             {siteConfig.email}
                                         </a>
                                     </li>
-                                    <li className="text-sm text-white/65">Atendimento Brasil</li>
+                                    <li className="py-2.5 text-base text-texto/65">Atendimento Brasil</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row sm:items-center">
-                        <p className="text-xs text-white/45">© {year} Covex Digital. Todos os direitos reservados.</p>
-                        <p className="text-xs text-white/45">Construído com obsessão por performance.</p>
+                    <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-texto/5 pt-8 sm:flex-row sm:items-center">
+                        <p className="text-sm text-texto/65">© {year} Covex Digital. Todos os direitos reservados.</p>
+                        <p className="text-sm text-texto/65">Construído com obsessão por performance.</p>
                     </div>
                 </div>
             </div>

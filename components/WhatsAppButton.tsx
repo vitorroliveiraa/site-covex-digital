@@ -15,7 +15,7 @@ export function WhatsAppButton() {
       transition={{ delay: 1.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ scale: 1.06 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full text-white animate-pulse-glow md:h-16 md:w-16"
+      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full text-white md:h-16 md:w-16"
       style={{
         background:
           'linear-gradient(135deg, #25d366 0%, #128c7e 100%)',

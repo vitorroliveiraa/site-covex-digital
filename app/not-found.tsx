@@ -15,13 +15,13 @@ export default function NotFound() {
           variant="strong"
           className="mx-auto max-w-xl px-8 py-14 text-center sm:px-12 sm:py-20"
         >
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary-light">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-destaque">
             Erro 404
           </span>
           <h1 className="mt-5 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
             Essa página não existe.
           </h1>
-          <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/70">
+          <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-texto/70">
             O link pode estar errado ou a página foi movida. Volte pro início ou fale direto com a gente.
           </p>
 
